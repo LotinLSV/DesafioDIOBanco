@@ -1,8 +1,8 @@
 # Depositar valor positivo na conta bancária.
-# precisa conter os valores de depósitos
-# 3 saques por dia sendo que o valor maximo por saque deve ser até 500 reais 
-# armazenar os valores de saque para extrato
-#  não pode sacar se o valor de saldo for menor que o valor do saque.
+# Precisa conter os valores de depósitos e saque
+# 3 saques por dia sendo que o valor maximo por saque deve ser até 500 reais. 
+# Armazenar os valores de saque e depósito para extrato.
+# Não pode sacar se o valor de saldo for menor que o valor do saque.
 
 operacoes = """
 
