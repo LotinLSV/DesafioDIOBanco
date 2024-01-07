@@ -75,14 +75,14 @@ def cadastrar_conta(agencia, conta, lista_usuarios, lista_contas):
 
 menu = """
 
-[d]  Depositar
-[s]  Sacar
-[e]  Extrato
-[nu] Novo Usuário
-[lu] Listar Usuários
-[nc] Nova Conta
-[lc] Listar Contas
-[q]  Sair
+[1]  Depositar
+[2]  Sacar
+[3]  Extrato
+[4] Novo Usuário
+[5] Listar Usuários
+[6] Nova Conta
+[7] Listar Contas
+[0]  Sair
 
 => """
 
@@ -97,7 +97,7 @@ while True:
 
     opcao = input(menu)
 
-    if opcao == "d":
+    if opcao == "1":
         print("Depósito")
         valor_deposito = float(input("Qual o valor a ser depositado?: "))
         # if (valor_deposito>0):
@@ -108,7 +108,7 @@ while True:
         #     print("Valor de deposito não permitido. Operação não realizada.")
         saldo, extrato = deposito(saldo, valor_deposito, extrato)
     
-    elif opcao == "s":
+    elif opcao == "2":
         print("Saque")
         valor_saque = float(input("Qual o valor a ser sacado?: "))
         # if (numero_saques < 3 and valor_saque <= 500):
@@ -126,30 +126,30 @@ while True:
         #         print(f"Limite máximo de R${limite:.2f} por saque excedido. Operação não realizada.")    
         saldo, extrato, numero_saques = saque(saldo=saldo, valor_saque=valor_saque, extrato=extrato, limite=limite, numero_saques=numero_saques, limite_saques=LIMITE_SAQUES)  
 
-    elif opcao == "e":
+    elif opcao == "3":
         # print("Extrato")
         # print(extrato)
         # print("---------------------")
         # print(f"Saldo    R${saldo:.2f}")
         imprimir_extrato(saldo, extrato=extrato)
 
-    elif opcao == "nu":
+    elif opcao == "4":
         print("Cadastrar novo usuário")
         cadastrar_usuario(lista_usuarios)
     
-    elif opcao == "lu":
+    elif opcao == "5":
         print("Listar Usuários")
         print(lista_usuarios)
     
 
-    elif opcao == "nc":
+    elif opcao == "6":
         print("Cadastrar nova conta")
         conta = len(lista_contas) + 1
         cadastrar_conta(AGENCIA, conta, lista_usuarios, lista_contas)
 
-    elif opcao == "lc":
+    elif opcao == "7":
         print("Listar Contas")
         print(lista_contas)
 
-    elif opcao == "q":
+    elif opcao == "0":
         break
